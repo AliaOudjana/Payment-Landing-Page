@@ -1,0 +1,90 @@
+@use '../util' as u;
+
+header{
+    background: var(--dark-grey);
+    @include u.flex-center;
+    justify-content: space-around;
+    padding: 2rem 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    @include u.medium{
+        justify-content: space-between;
+        padding: 2rem;
+    }
+    @include u.small{
+        justify-content: space-between;
+        padding: 2rem;
+    }
+    .logo,
+    .sidebar-icon{
+        z-index: 999;
+    }
+    nav{
+        @include u.flex-center;
+        gap: 3.5rem;
+        @include u.medium{
+            display: none;
+        }
+        @include u.small{
+            display: none;
+        }
+    }
+    a{
+        color: var(--white);
+        text-decoration: none;
+        font-weight: 500;
+        &:hover{
+            color: var(--accent);
+        }
+    }
+    .buttons{
+        @include u.flex-center;
+        gap: 0.5rem;
+        @include u.medium{
+            display: none;
+        }
+        @include u.small{
+            display: none;
+        }
+    }
+    .sidebar-icon{
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 0.4rem;
+        cursor: pointer;
+        
+        @include u.huge{
+            display: none;
+        }
+        @include u.big{
+            display: none;
+        }
+        svg:first-child{
+            transition: 0.5s ease-out;
+        }
+        svg:last-child{
+            transition: 0.5s ease-out;
+        }
+    }
+    input{
+        opacity: 0;
+        position: absolute;
+        z-index: 9999;
+    }
+    input:checked + .sidebar-icon{
+        svg:first-child{
+            transition: 0.5s ease-out;
+            transform: translate(-0.5px, 5px) rotate(-44.99deg);
+        }
+        svg:last-child{
+            transition: 0.5s ease-out;
+            transform: translate(0.5px, -5px) rotate(44.11deg);
+        }
+    }
+    input:checked ~ .sidebar{
+        right: 0;
+        transition: 0.7s ease-out;
+    }
+}

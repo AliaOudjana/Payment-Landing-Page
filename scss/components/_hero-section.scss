@@ -1,0 +1,66 @@
+@use '../util' as u;
+
+.hero-section{
+    margin: 3rem;
+    @include u.small{
+        margin: 1rem;
+    }
+    @include u.flex-center;
+    justify-content: space-around;
+    @include u.medium{
+        flex-direction: column;
+    }
+    @include u.small{
+        flex-direction: column;
+    }
+    h1{
+        margin: 1.5rem 0 2rem;
+        color: var(--white);
+        font-weight: 600;
+        font-size: 3.5rem;
+        @include u.big{
+            font-size: 3rem;
+        }
+        @include u.medium{
+            font-size: 3rem;
+        }
+        @include u.small{
+            font-size: 2.7rem;
+            line-height: 3.5rem;
+            margin-top: 1rem;
+        }
+    }
+    p{
+        margin: 0;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.3rem;
+        font-weight: 500;
+        padding-left: 0.5rem;
+        @include u.big{
+            font-size: 0.875rem;
+        }
+        @include u.medium{
+            font-size: 0.875rem;
+        }
+        @include u.small{
+            font-size: 0.7rem;
+            padding-left: 0;
+        }
+    }
+    div{
+        max-width: 33rem;
+        @include u.medium{
+            padding: 1.5rem 0 2rem;
+        }
+        @include u.small{
+            max-width: 100%;
+            padding: 1.5rem 0;
+        }
+    }
+    img{
+        @include u.small{
+            max-width: 100%;
+        }
+    }
+}

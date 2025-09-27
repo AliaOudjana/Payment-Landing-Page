@@ -1,0 +1,29 @@
+@mixin flex-center{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+@mixin huge{
+    @media (width > 1020px){
+        @content;
+    }
+}
+
+@mixin big{
+    @media (900px < width <= 1020px){
+        @content;
+    }
+}
+
+@mixin medium{
+    @media (550px < width <= 900px){
+        @content;
+    }
+}
+
+@mixin small{
+    @media (width <= 550px){
+        @content;
+    }
+}

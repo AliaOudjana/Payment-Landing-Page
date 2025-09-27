@@ -1,0 +1,49 @@
+@use '../util' as u;
+
+button{
+    cursor: pointer;
+    background: var(--accent);
+    color: var(--dark-grey);
+    border-radius: 0.5rem;
+    border: none;
+    font-weight: 700;
+    &:hover{
+        background-color: var(--light-grey);
+        color: var(--white);
+    }
+}
+
+.login-btn,
+.signup-btn{
+    width: 8rem;
+    margin: 0.1rem;
+    padding: 0.7rem;
+    font-size: 1.25rem;
+}
+
+.download-btn{
+    width: 11.75rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    @include u.flex-center;
+    gap: 0.5rem;
+    justify-content: center;
+    @include u.medium{
+        width: 9.5rem;
+        padding: 0.8rem;
+        font-size: 1.2rem;
+    }
+    @include u.small{
+        width: 9.5rem;
+        padding: 0.8rem;
+        font-size: 1.2rem;
+    }
+    svg{
+        stroke: var(--dark-grey);
+    }
+    &:hover{
+        svg{
+            stroke: var(--white);
+        }
+    }
+}
